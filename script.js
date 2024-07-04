@@ -1,10 +1,9 @@
 const container = document.querySelector('.container')
-const charactersCount = 20;
+const charactersCount = 50;
 const colorDeadOrAlive = {
   alive: "#30be30",
   dead: "#bb2323"
 }
-
 const mainStatus = Object.keys(colorDeadOrAlive)
 
 const fetchCharacters = async () => {
@@ -12,9 +11,6 @@ const fetchCharacters = async () => {
     await getCharacters(i)
   }
 }
-
-console.log(mainStatus);
-
 
 const getCharacters = async (id) => {
   const url = `https://rickandmortyapi.com/api/character/${id}`;
@@ -42,9 +38,5 @@ const createCharacterCard = (character) => {
   </div>
 </div>`
 container.appendChild(content)
-
 }
-
-
 fetchCharacters();
-
